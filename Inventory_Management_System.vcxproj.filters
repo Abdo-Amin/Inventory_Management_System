@@ -21,18 +21,24 @@
     <ClCompile Include="ims_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\auth.cpp">
+    <ClCompile Include="src\spu.cpp">
       <Filter>Header Implementations</Filter>
     </ClCompile>
     <ClCompile Include="src\utils.cpp">
       <Filter>Header Implementations</Filter>
     </ClCompile>
+    <ClCompile Include="src\ims_debug.cpp">
+      <Filter>Header Implementations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\auth.h">
+    <ClInclude Include="include\spu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ims_debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

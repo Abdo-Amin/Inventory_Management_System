@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ims_main.cpp" />
-    <ClCompile Include="src\auth.cpp" />
+    <ClCompile Include="src\spu.cpp" />
+    <ClCompile Include="src\ims_debug.cpp" />
     <ClCompile Include="src\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\auth.h" />
+    <ClInclude Include="include\spu.h" />
+    <ClInclude Include="include\ims_debug.h" />
     <ClInclude Include="include\utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
