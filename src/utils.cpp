@@ -4,7 +4,7 @@
 #include <thread>
 #include <chrono>
 
-void clearCIN()
+void clearCin()
 {
 	std::cin.clear();
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -17,8 +17,9 @@ void clearScreen()
 	std::cout << "\033[2J\033[H" << std::flush;
 }
 
-void threadSleep(int miliseconds)
+void threadSleep(unsigned int miliseconds)
 {
+	// Used chrono for high-precision sleeping.
 	std::this_thread::sleep_for(std::chrono::milliseconds(miliseconds));
 }
 
