@@ -18,7 +18,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ims_main..cpp">
+    <ClCompile Include="ims_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\auth.cpp">
