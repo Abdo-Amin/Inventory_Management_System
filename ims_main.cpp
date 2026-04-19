@@ -1,6 +1,8 @@
-#include <iostream>
+#include "include/spu.h"
+#include <cstdlib>
 
 int main()
 {
-	return 0;
-}
+	// Initializes the Special User (SPU) environment and system folders.
+	// Returns EXIT_SUCCESS (0) if the setup or check finishes without error.
+	return startSPU();
