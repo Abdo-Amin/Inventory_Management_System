@@ -1,13 +1,14 @@
 #include "../include/spu.h"
 #include "../include/utils.h"
 #include "../include/ims_debug.h"
+#include "../include/hash_data_encryption.h"
 #include <filesystem>
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <vector>
 
 namespace fs = std::filesystem;
-
 
 bool isSPUFound()
 {
@@ -23,7 +24,7 @@ void makeSPUData(std::string& spuData, const char* message)
 
 		if ( std::cin.fail() )
 		{
-			clearCin();
+			clearCin(); // Reset stream state and clear buffer
 			continue;
 		}
 
@@ -35,43 +36,37 @@ void makeSPUData(std::string& spuData, const char* message)
 
 void initiateSPU(std::string spuName, std::string spuPasswd)
 {
-
+	// Create the directory path for the user data
 	fs::create_directories("ims/SP_User");
 
 	std::ofstream spUserFile("ims/SP_User/spu.txt");
 
 	if ( spUserFile.is_open() )
 	{
-		spUserFile << spuName << '\n';
+		// Format stored as name:hash
+		spUserFile << spuName << ':';
 		spUserFile << spuPasswd << '\n';
 	}
 
 	spUserFile.close();
 }
 
-void checkSPU()
+void startSPU()
 {
-	// WARNING: Development-only debug hook that deletes the IMS directory.
-	// Must be removed in production as it resets all stored data.
-	deleteIMSDirectory();
-
-	if ( isSPUFound() )
-	{
-		return;
-	}
-
-	// First-time setup flow.
-
 	std::cout << "Welcome to the Inventory Management System!\n";
 	std::cout << "If this is your first time make sure you read our README.md at our repository.\n\n";
-
 
 	std::string spuName{};
 	std::string spuPasswd{};
 
-	// Pass-by-reference allows these calls to update our local strings directly
 	makeSPUData(spuName, "Enter your special user name : ");
 	makeSPUData(spuPasswd, "Enter your special user password : ");
+
+	// Verify libsodium hashing succeeded before proceeding
+	if ( hashEncyptData(spuPasswd) == EXIT_FAILURE )
+	{
+		std::abort();
+	}
 
 	initiateSPU(spuName, spuPasswd);
 

@@ -30,6 +30,6 @@ void initiateSPU(std::string spuName, std::string spuPasswd);
  * Handles the SPU initialization workflow.
  * Displays a welcome message and triggers setup if no SPU file is found.
  */
-void checkSPU();
+void startSPU();
 
 #endif

@@ -30,6 +30,9 @@
     <ClCompile Include="src\ims_debug.cpp">
       <Filter>Header Implementations</Filter>
     </ClCompile>
+    <ClCompile Include="src\hash_data_encryption.cpp">
+      <Filter>Header Implementations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\spu.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\ims_debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hash_data_encryption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
