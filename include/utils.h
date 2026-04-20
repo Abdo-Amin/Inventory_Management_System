@@ -8,6 +8,6 @@ void clearCin();
 void clearScreen();
 
 // Pauses execution for the specified duration (in milliseconds).
-void threadSleep(int miliseconds);
+void threadSleep(unsigned int miliseconds);
 
 #endif
