@@ -4,7 +4,6 @@
 #include <filesystem>
 #include <fstream>
 #include <string>
-#include <cstdlib>
 #include <iostream>
 
 namespace fs = std::filesystem;
@@ -50,7 +49,7 @@ void initiateSPU(std::string spuName, std::string spuPasswd)
 	spUserFile.close();
 }
 
-bool startSPU()
+void checkSPU()
 {
 	// WARNING: Development-only debug hook that deletes the IMS directory.
 	// Must be removed in production as it resets all stored data.
@@ -58,7 +57,7 @@ bool startSPU()
 
 	if ( isSPUFound() )
 	{
-		return EXIT_SUCCESS;
+		return;
 	}
 
 	// First-time setup flow.
@@ -76,5 +75,5 @@ bool startSPU()
 
 	initiateSPU(spuName, spuPasswd);
 
-	return EXIT_SUCCESS;
+	return;
 }
