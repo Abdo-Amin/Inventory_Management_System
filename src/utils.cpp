@@ -1,25 +1,46 @@
+#include "../include/spu.h"
 #include "../include/utils.h"
 #include <iostream>
 #include <limits>
 #include <thread>
 #include <chrono>
 
-void clearCin()
+namespace ims_utils
 {
-	std::cin.clear();
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
 
-void clearScreen()
-{
-	// Portably clears screen and moves cursor to home (top-left).
-	// Used std::flush to clearScreen to ensure the terminal clears immediately without waiting for the next output.
-	std::cout << "\033[2J\033[H" << std::flush;
-}
+	void clearCin()
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
 
-void threadSleep(unsigned int miliseconds)
-{
-	// Used chrono for high-precision sleeping.
-	std::this_thread::sleep_for(std::chrono::milliseconds(miliseconds));
-}
+	void initiateData(std::string& data, const char* message)
+	{
+		while ( true )
+		{
+			std::cout << message;
+			std::cin >> data;
 
+			clearCin();
+
+			if ( !isSPUFound() )
+			{
+				std::cout << "Do you confirm? (Y/N) ";
+
+			}
+
+			std::cout << '\n';
+
+			break;
+		}
+	}
+
+
+
+	void threadSleep(unsigned int miliseconds)
+	{
+		// Used chrono for high-precision sleeping.
+		std::this_thread::sleep_for(std::chrono::milliseconds(miliseconds));
+	}
+
+}
