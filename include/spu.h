@@ -11,14 +11,6 @@
 bool isSPUFound();
 
 /**
- * Prompts the user for input and stores it in the provided string.
- * Performs basic input validation (stream failure check only).
- * @param spuData Reference to the string where the input will be stored.
- * @param message Prompt message displayed to the user.
- */
-void makeSPUData(std::string& spuData, const char* message);
-
-/**
  * Creates the required directory structure and writes SPU credentials
  * to the configuration file. Existing file contents will be overwritten.
  * @param spuName Username to be stored.

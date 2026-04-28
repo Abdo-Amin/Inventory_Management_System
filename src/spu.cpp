@@ -15,24 +15,6 @@ bool isSPUFound()
 	return fs::exists("ims/SP_User/spu.txt");
 }
 
-void makeSPUData(std::string& spuData, const char* message)
-{
-	while ( true )
-	{
-		std::cout << message;
-		std::cin >> spuData;
-
-		if ( std::cin.fail() )
-		{
-			clearCin(); // Reset stream state and clear buffer
-			continue;
-		}
-
-		std::cout << '\n';
-
-		break;
-	}
-}
 
 void initiateSPU(std::string spuName, std::string spuPasswd)
 {
@@ -59,13 +41,13 @@ void startSPU()
 	std::string spuName{};
 	std::string spuPasswd{};
 
-	makeSPUData(spuName, "Enter your special user name : ");
-	makeSPUData(spuPasswd, "Enter your special user password : ");
+	ims_utils::initiateData(spuName, "Enter your special user name : ");
+	ims_utils::initiateData(spuPasswd, "Enter your special user password : ");
 
 	// Verify libsodium hashing succeeded before proceeding
 	if ( hashEncyptData(spuPasswd) == EXIT_FAILURE )
 	{
-		std::abort();
+		std::abort(); 
 	}
 
 	initiateSPU(spuName, spuPasswd);

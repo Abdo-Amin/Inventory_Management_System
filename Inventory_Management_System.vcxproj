@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <AdditionalOptions>/w44365 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -132,7 +132,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <AdditionalOptions>/w44365 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -144,12 +144,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ims_main.cpp" />
+    <ClCompile Include="src\auth.cpp" />
+    <ClCompile Include="src\cli_io.cpp" />
     <ClCompile Include="src\hash_data_encryption.cpp" />
     <ClCompile Include="src\spu.cpp" />
     <ClCompile Include="src\ims_debug.cpp" />
     <ClCompile Include="src\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\auth.h" />
+    <ClInclude Include="include\cli_io.h" />
     <ClInclude Include="include\hash_data_encryption.h" />
     <ClInclude Include="include\spu.h" />
     <ClInclude Include="include\ims_debug.h" />

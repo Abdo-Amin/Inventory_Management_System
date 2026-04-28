@@ -1,4 +1,5 @@
 #include "../include/utils.h"
+#include "../include/cli_io.h"
 #include <iostream>
 #include <filesystem>
 
@@ -11,7 +12,7 @@ void deleteIMSDirectory()
 	{
 		// Notify developer that the reset was performed
 		std::cerr << "DEBUG : REMOVED IMS FOLDER!\n";
-		threadSleep(800);
-		clearScreen();
+		ims_utils::threadSleep(800);
+		cli_io::clearScreen();
 	}
 }

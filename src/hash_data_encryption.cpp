@@ -38,12 +38,6 @@ int hashEncyptData(std::string& data)
     // from the hashed C-string buffer.
     for ( char ch : hashedPassword )
     {
-        // For some reason there are spaces added after the encryption so this prevents it from going to the special user file.
-        if ( ch == ' ' )
-        {
-            continue;
-        }
-
         data += ch;
     }
 

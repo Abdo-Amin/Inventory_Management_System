@@ -33,6 +33,12 @@
     <ClCompile Include="src\hash_data_encryption.cpp">
       <Filter>Header Implementations</Filter>
     </ClCompile>
+    <ClCompile Include="src\auth.cpp">
+      <Filter>Header Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cli_io.cpp">
+      <Filter>Header Implementations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\spu.h">
@@ -45,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\hash_data_encryption.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\auth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cli_io.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
