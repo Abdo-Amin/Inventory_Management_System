@@ -17,7 +17,7 @@ namespace ims_utils
 	void initiateData(std::string& data, const char* message);
 
 	// Pauses execution for the specified duration (in milliseconds).
-	void threadSleep(unsigned int miliseconds);
+	void threadSleep(uint16_t miliseconds);
 }
 
 

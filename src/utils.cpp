@@ -23,21 +23,13 @@ namespace ims_utils
 
 			clearCin();
 
-			if ( !isSPUFound() )
-			{
-				std::cout << "Do you confirm? (Y/N) ";
-
-			}
-
 			std::cout << '\n';
 
 			break;
 		}
 	}
 
-
-
-	void threadSleep(unsigned int miliseconds)
+	void threadSleep(uint16_t miliseconds)
 	{
 		// Used chrono for high-precision sleeping.
 		std::this_thread::sleep_for(std::chrono::milliseconds(miliseconds));

@@ -145,16 +145,18 @@
   <ItemGroup>
     <ClCompile Include="ims_main.cpp" />
     <ClCompile Include="src\auth.cpp" />
-    <ClCompile Include="src\cli_io.cpp" />
+    <ClCompile Include="src\ims_tui.cpp" />
     <ClCompile Include="src\hash_data_encryption.cpp" />
+    <ClCompile Include="src\keys.cpp" />
     <ClCompile Include="src\spu.cpp" />
     <ClCompile Include="src\ims_debug.cpp" />
     <ClCompile Include="src\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\auth.h" />
-    <ClInclude Include="include\cli_io.h" />
+    <ClInclude Include="include\ims_tui.h" />
     <ClInclude Include="include\hash_data_encryption.h" />
+    <ClInclude Include="include\keys.h" />
     <ClInclude Include="include\spu.h" />
     <ClInclude Include="include\ims_debug.h" />
     <ClInclude Include="include\utils.h" />
